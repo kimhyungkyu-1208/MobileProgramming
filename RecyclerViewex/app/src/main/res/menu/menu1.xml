@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:compat="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/menuitem1"
+        android:icon="@android:drawable/btn_star_big_on"
+        android:title="Linear"
+        android:showAsAction="always"
+        compat:ignore="AppCompatResource" />
+    <item
+        android:id="@+id/menuitem2"
+        android:icon="@android:drawable/btn_star_big_off"
+        android:title="Grid"
+        android:showAsAction="always"
+        compat:ignore="AppCompatResource" />
+    <item
+        android:id="@+id/menuitem3"
+        android:icon="@android:drawable/btn_radio"
+        android:title="StaggeredGrid"
+        android:showAsAction="always"
+        compat:ignore="AppCompatResource" />
+</menu>
