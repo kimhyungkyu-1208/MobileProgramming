@@ -1,3 +1,4 @@
+
 plugins {
     id 'com.android.application'
     id 'kotlin-android'
@@ -8,7 +9,7 @@ android {
     buildToolsVersion "30.0.3"
 
     defaultConfig {
-        applicationId "com.example.example1"
+        applicationId "com.example.exerciseengvoca"
         minSdkVersion 29
         targetSdkVersion 30
         versionCode 1
@@ -29,10 +30,6 @@ android {
     }
     kotlinOptions {
         jvmTarget = '1.8'
-    }
-    buildFeatures{
-        viewBinding
-        dataBinding
     }
 }
 

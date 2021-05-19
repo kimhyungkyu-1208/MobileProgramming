@@ -1,6 +1,7 @@
 plugins {
     id 'com.android.application'
     id 'kotlin-android'
+    apply plugin: 'kotlin-kapt'
 }
 
 android {
@@ -8,7 +9,7 @@ android {
     buildToolsVersion "30.0.3"
 
     defaultConfig {
-        applicationId "com.example.example1"
+        applicationId "com.example.myengvocfinalapp"
         minSdkVersion 29
         targetSdkVersion 30
         versionCode 1
@@ -26,13 +27,15 @@ android {
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
+        exclude 'META-INF/atomicfu.kotlin_module'
     }
+
     kotlinOptions {
         jvmTarget = '1.8'
     }
     buildFeatures{
-        viewBinding
-        dataBinding
+        viewBinding = true
+        dataBinding = true
     }
 }
 
