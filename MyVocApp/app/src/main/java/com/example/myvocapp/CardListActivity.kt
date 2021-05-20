@@ -18,17 +18,7 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.google.android.material.navigation.NavigationView
-import com.greimul.simpleflashcard.R
-import com.greimul.simpleflashcard.adapter.CardAdapter
-import com.greimul.simpleflashcard.db.Card
-import com.greimul.simpleflashcard.viewmodel.CardViewModel
-import kotlinx.android.synthetic.main.activity_card_list.*
-import kotlinx.android.synthetic.main.dialog_new_card.*
-import kotlinx.android.synthetic.main.dialog_new_card.view.*
-import kotlinx.android.synthetic.main.dialog_new_card.view.toolbar_new_card
 import kotlin.math.hypot
-import kotlin.properties.Delegates
 
 class CardListActivity:AppCompatActivity() {
 

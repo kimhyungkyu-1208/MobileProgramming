@@ -8,17 +8,13 @@ android {
     buildToolsVersion "30.0.3"
 
     defaultConfig {
-        applicationId "com.example.newengvoca"
+        applicationId "com.example.myengvocabulary"
         minSdkVersion 29
         targetSdkVersion 30
         versionCode 1
         versionName "1.0"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
-        useLibrary 'android.test.runner'
-
-        useLibrary 'android.test.base'
-        useLibrary 'android.test.mock'
     }
 
     buildTypes {
