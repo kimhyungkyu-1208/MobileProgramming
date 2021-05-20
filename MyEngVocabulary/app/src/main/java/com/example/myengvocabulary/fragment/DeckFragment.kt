@@ -5,11 +5,16 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.lifecycle.Observer
+import androidx.recyclerview.widget.DividerItemDecoration
+import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.myengvocabulary.R
 import com.example.myengvocabulary.adapter.DeckListAdapter
+import com.example.myengvocabulary.database.DeckRepo
+import com.example.myengvocabulary.viewmodel.DeckViewModel
 
-class DeckFragment : Fragment() {
+class DeckFragment(val deckViewModel:DeckViewModel): Fragment(){
 
     private lateinit var recyclerView: RecyclerView
     private lateinit var deckListAdapter: DeckListAdapter
@@ -34,7 +39,7 @@ class DeckFragment : Fragment() {
 
         viewManager = LinearLayoutManager(activity)
 
-        recyclerView = view.recyclerview_deck.apply{
+        recyclerView = view.findViewById<RecyclerView>(R.id.recyclerview_deck).apply{
             setHasFixedSize(true)
             adapter = deckListAdapter
             layoutManager = viewManager

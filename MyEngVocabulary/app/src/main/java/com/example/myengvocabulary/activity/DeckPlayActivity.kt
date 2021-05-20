@@ -14,9 +14,10 @@ import com.example.myengvocabulary.R.id.toolbar_deck_play
 import com.example.myengvocabulary.R.id.viewpager2_deck_play
 import com.example.myengvocabulary.adapter.CardAdapter
 import com.example.myengvocabulary.viewmodel.CardViewModel
+import com.example.myengvocabulary.viewmodel.DeckViewModel
 import java.lang.Math.abs
 
-class DeckPlayActivity : AppCompatActivity() {
+class DeckPlayActivity:AppCompatActivity() {
 
     private lateinit var cardViewModel: CardViewModel
     private lateinit var deckPlayAdapter: CardAdapter

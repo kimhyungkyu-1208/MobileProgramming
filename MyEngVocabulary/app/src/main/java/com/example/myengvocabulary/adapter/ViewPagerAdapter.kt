@@ -5,6 +5,10 @@ import android.os.Parcelable
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentActivity
 import androidx.viewpager2.adapter.FragmentStateAdapter
+import com.example.myengvocabulary.fragment.DeckFragment
+import com.example.myengvocabulary.fragment.ErrorFragment
+import com.example.myengvocabulary.fragment.ImExportFragment
+import com.example.myengvocabulary.fragment.InfoFragment
 import com.example.myengvocabulary.viewmodel.CardViewModel
 import com.example.myengvocabulary.viewmodel.DeckViewModel
 
