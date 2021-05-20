@@ -1,6 +1,8 @@
-package com.example.myvocapp
+package com.greimul.simpleflashcard.activity
 
 import android.app.AlertDialog
+import android.graphics.Color
+import android.graphics.drawable.ColorDrawable
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.lifecycle.ViewModel
@@ -9,6 +11,13 @@ import androidx.viewpager2.widget.ViewPager2
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.google.android.material.tabs.TabLayout
 import com.google.android.material.tabs.TabLayoutMediator
+import com.greimul.simpleflashcard.R
+import com.greimul.simpleflashcard.adapter.ViewPagerAdapter
+import com.greimul.simpleflashcard.db.Deck
+import com.greimul.simpleflashcard.viewmodel.CardViewModel
+import com.greimul.simpleflashcard.viewmodel.DeckViewModel
+import kotlinx.android.synthetic.main.activity_main.*
+import kotlinx.android.synthetic.main.dialog_new_deck.view.*
 
 class MainActivity : AppCompatActivity() {
 
@@ -27,7 +36,7 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        setSupportActionBar(toolbar _main)
+        setSupportActionBar(toolbar_main)
         deckViewModel = ViewModelProvider(this,
             ViewModelProvider.AndroidViewModelFactory.getInstance(application))
             .get(DeckViewModel::class.java)

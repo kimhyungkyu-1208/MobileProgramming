@@ -1,0 +1,89 @@
+package com.example.myvocapp
+
+import android.app.ActivityOptions
+import android.app.AlertDialog
+import android.content.Intent
+import android.view.LayoutInflater
+import android.view.View
+import android.view.ViewGroup
+import android.widget.Button
+import androidx.fragment.app.FragmentActivity
+import androidx.lifecycle.LifecycleOwner
+import androidx.lifecycle.Observer
+import androidx.lifecycle.ViewModelProvider
+import androidx.recyclerview.widget.RecyclerView
+import java.lang.Exception
+
+class DeckListAdapter(val activity:FragmentActivity?,val lifecycleOwner: LifecycleOwner): RecyclerView.Adapter<DeckListAdapter.ViewHolder>(){
+
+    private var viewData = listOf<Deck>()
+    private var viewModel:DeckViewModel
+
+    init{
+        viewModel = activity?.run{
+            ViewModelProvider(this,
+                ViewModelProvider.AndroidViewModelFactory.getInstance(application))
+                .get(DeckViewModel::class.java)
+        }?:throw Exception("invalid")
+    }
+
+    class ViewHolder(v:View):RecyclerView.ViewHolder(v){
+        val button:Button = v.button_deck
+    }
+
+    override fun getItemCount(): Int = viewData.size
+
+    override fun onBindViewHolder(holder: ViewHolder, position: Int) {
+        holder.button.text = viewData[position].name
+    }
+
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
+        val v = LayoutInflater.from(parent.context).inflate(R.layout.item_deck,parent,false)
+        val viewHolder = ViewHolder(v)
+        viewHolder.button.setOnClickListener {
+            val dialogBuilder = AlertDialog.Builder(parent.context,R.style.DialogStyle)
+            val dialogView = LayoutInflater.from(parent.context).inflate(R.layout.dialog_deck_click,parent,false)
+            val data = viewData[viewHolder.adapterPosition]
+
+            dialogView.textview_name.text = data.name
+            dialogView.textview_desc.text = data.description
+            viewModel.countCards(data.id).observe(lifecycleOwner, Observer {
+                dialogView.textview_size.text = it.toString()
+            })
+
+            val dialog = dialogBuilder.setView(dialogView).create()
+
+            dialogView.button_delete.setOnClickListener {
+                dialog.hide()
+
+                val secondDialogBuilder = AlertDialog.Builder(parent.context,R.style.DialogStyle)
+                val secondDialogView = LayoutInflater.from(parent.context).inflate(R.layout.dialog_deck_delete,parent,false)
+                secondDialogView.textview_dialog_delete.text = "Are you sure you want to delete Deck \"${data.name}\""
+                val secondDialog = secondDialogBuilder.setView(secondDialogView).setPositiveButton("OK"){
+                    dialog, i ->
+                        viewModel.delete(data.id)
+                        dialog.dismiss()
+                }.setNegativeButton("Cancle"){
+                    dialog,i->
+                }.show()
+            }
+            dialogView.button_edit.setOnClickListener {
+                val intent = Intent(parent.context,
+                    CardListActivity::class.java)
+                parent.context.startActivity(intent.putExtra("deckId",data.id))
+            }
+            dialogView.button_play.setOnClickListener {
+                val intent = Intent(parent.context,
+                    DeckPlayActivity::class.java)
+                parent.context.startActivity(intent.putExtra("deckId",data.id).putExtra("deckName",data.name))
+            }
+            dialog.show()
+        }
+        return viewHolder
+    }
+
+    fun setDeck(deckList:List<Deck>){
+        viewData = deckList
+        notifyDataSetChanged()
+    }
+}
