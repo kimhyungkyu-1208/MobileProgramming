@@ -2,13 +2,13 @@ package com.example.myengvocabulary.database
 
 import androidx.lifecycle.LiveData
 
-class CardRepo(val cardDao:CardDao, val deckID:Int) {
+class CardRepo(val cardDao:CardDao, val deckId: Int) {
 
     lateinit var cardList: LiveData<List<Card>>
 
     init{
-        if(deckID != -1) {
-            cardList = cardDao.getCardsFromDeck(deckID)
+        if(deckId != -1) {
+            cardList = cardDao.getCardsFromDeck(deckId)
         }
         else{
             cardList = cardDao.getAll()
