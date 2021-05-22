@@ -1,2 +1,2 @@
-rootProject.name = "MyFBDBAPP"
+rootProject.name = "MYFBDBAPP"
 include ':app'
