@@ -24,14 +24,12 @@ class MainActivity : AppCompatActivity() {
         binding.apply {
             button.setOnClickListener {
                 if(!imgFragment.isVisible){
-                    val fragment = supportFragmentManager.beginTransaction()
                     fragment.addToBackStack(null)
                     fragment.replace(R.id.frameLayout, imgFragment)
                     fragment.commit()
                 }
             }
             button2.setOnClickListener {
-                val fragment = supportFragmentManager.beginTransaction()
                 fragment.addToBackStack(null)
                 fragment.replace(R.id.frameLayout, itemFragment)
                 fragment.commit()

@@ -19,7 +19,7 @@ abstract class DeckDatabase: RoomDatabase(){
             if(tempInst!=null)
                 return tempInst
             synchronized(this){
-                val instance = Room.databaseBuilder(context.applicationContext, DeckDatabase::class.java, "deck_database").build()
+                val instance = Room.databaseBuilder(context, DeckDatabase::class.java, "deck_database").build()
                 INSTANCE = instance
                 return instance
             }

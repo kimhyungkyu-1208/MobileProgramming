@@ -7,15 +7,17 @@ import androidx.lifecycle.viewModelScope
 import com.example.myengvocabulary.database.Deck
 import com.example.myengvocabulary.database.DeckDatabase
 import kotlinx.coroutines.launch
-import kotlin.coroutines.coroutineContext
 import com.example.myengvocabulary.database.DeckRepo as DeckRepo
 
 class DeckViewModel(application: Application): AndroidViewModel(application) {
-    private var repo: DeckRepo = DeckRepo(DeckDatabase.getDatabase(application.applicationContext).deckDao())
+
+    var repo: DeckRepo = DeckRepo(DeckDatabase.getDatabase(application.applicationContext).deckDao())
     var deckList: LiveData<List<Deck>> = repo.deckList
     var recentInsertedDeckId:Long = 0
 
 //    init{
+//        var repo: DeckRepo = DeckRepo(DeckDatabase.getDatabase(application.applicationContext).deckDao())
+//        var deckList: LiveData<List<Deck>> = repo.deckList
 //        //recentInsertedDeckId = repo.recentInsertedDeckId
 //    }
     fun insert(deck:Deck) = viewModelScope.launch {
