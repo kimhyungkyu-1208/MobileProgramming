@@ -1,0 +1,21 @@
+<resources>
+
+    <string name="app_name">English Dictionary</string>
+
+    <string name="provided_by_owl_bot">Definitions provided by OwlBot.info</string>
+
+    <string name="write_the_word">Write the word</string>
+
+    <string name="search">Search</string>
+
+    <string name="favorites">Favorites</string>
+
+    <string name="history">History</string>
+
+    <string name="about">About</string>
+
+    <string name="options">Options</string>
+
+    <string name="lorem_ipsum">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin dignissim sed libero quis imperdiet. Nam varius elementum dui a iaculis. Maecenas fermentum nunc non augue rhoncus, eget vulputate elit lobortis. Nunc sed volutpat nibh. Curabitur a orci elit. Donec laoreet enim risus, eget efficitur lectus porta nec. Proin accumsan, enim porta sodales molestie, nibh lectus porttitor purus, eget posuere tellus libero sed nulla.</string>
+
+</resources>

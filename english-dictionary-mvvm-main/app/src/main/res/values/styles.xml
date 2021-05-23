@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+
+    <!-- BUTTONS STYLES -->
+
+    <style name="Widget.ENDictionary.Button.Primary" parent="@style/Widget.MaterialComponents.Button">
+    </style>
+
+    <style name="Widget.ENDictionary.Button.Secondary" parent="@style/Widget.MaterialComponents.Button.TextButton">
+    </style>
+
+    <style name="Widget.ENDictionary.Button.Outlined" parent="@style/Widget.MaterialComponents.Button.OutlinedButton">
+    </style>
+
+
+    <!-- EditText STYLES -->
+
+    <style name="Widget.ENDictionary.TextInputLayout.Outlined" parent="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+    </style>
+
+
+    <!-- TextView STYLES -->
+
+    <style name="Widget.ENDictionary.TextView.Title" parent="TextAppearance.MaterialComponents.Headline5">
+    </style>
+
+    <style name="Widget.ENDictionary.TextView.Body" parent="TextAppearance.MaterialComponents.Body2">
+    </style>
+
+    <style name="Widget.ENDictionary.TextView.Subtitle" parent="TextAppearance.MaterialComponents.Subtitle2">
+    </style>
+
+    <style name="Widget.ENDictionary.TextView.Caption" parent="TextAppearance.MaterialComponents.Caption">
+    </style>
+
+
+    <!-- ShapeableImageView STYLES -->
+
+    <style name="ShapeAppearance.EnDictionary.Rounded" parent="ShapeAppearance.MaterialComponents.SmallComponent">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">50%</item>
+    </style>
+
+
+</resources>
